@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <%- include ('../partials/head') %>
+    </head>
+    <body>
+        <%- include ('../partials/header') %>
+    
+    <!-- <main class="main-product-detail">
+         <div class="card">
+            <div class="imgBox">
+                <img src="/img/products/<%=product.image%>" alt="<%= product.product_name %>">
+            </div>
+            <div class="details">
+                <div class="name-product">
+                    <h3><%= product.product_name %></h3>
+                </div>
+                <div class="description">
+                    <h4>Descripción:</h4><br>
+                    <p><%= product.description %> </p>
+                </div>
+                <div class="caja-categoria-type">
+                    <div class="categoria">
+                        <p><b>Categoria: </b> <%= product.categories.category_name %></p>
+                    </div>
+                    <div class="type">
+                        <p><b>Condicion de Venta: </b><%= product.type %> </p>
+                    </div>
+                </div>  
+                <div class="caja-talle-condicion">
+                    <div class="size">
+                        <p><b>Talle: </b> <%= product.size %> </p>
+                    </div>
+                    <div class="condition">
+                        <p><b>Condicion: </b> <%= product.condition %> </p>
+                    </div>
+                </div>    
+                <div class="caja-precio-status">
+                    <div class="price">
+                        <h4>Precio: $ <%= product.price %></h4>
+                    </div>
+                    <div class="status">
+                        <p><b>Estado: </b> <%= product.status %></p>
+                    </div>
+                </div>
+                <div class="caja-buy">
+                    <butoon class="boton-buy"> <a href="">COMPRAR</a> </butoon>
+                </div>
+                <div class="caja-edicion-borrar">
+                    <div class="editar">
+                        <button class="boton-editar">
+                            <a href="/products/edit/<%= product.id %>">Editar</a>
+                        </button>
+                    </div>
+                    <div class="borrar">
+                        <form class="form-boton-borar" action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" enctype="multipart/form-data" style="display:inline-flex">
+                            <button class="boton-borrar" type="submit">Borrar</button>
+                        </form>                        
+                    </div>
+                </div>
+            </div>
+         </div>
+        
+    </main> -->
+    <section id="pro-details" class="section-p1">
+        <div class="single-pro-image">
+            <img src="/img/products/<%=product.image%>" width="100%" id="MainImage" alt="<%= product.product_name %>" />
+            </div>
+
+
+        <div class="single-pro-details">
+            <h4><%= product.product_name %></h4>
+            <p><b>Categoria: </b> <%= product.categories.category_name %></p>
+            <p><b>Estado: </b> <%= product.status %></p>
+            <p><b>Talle: </b> <%= product.size %> </p>
+            <h2>$<%= product.price %></h2>
+            <input type="number" value="1" />
+            <button class="normal">Agregar al Carrito</button>
+            <h4>Detalles del Producto</h4>
+            <span>
+          Lorem ipsum dolor, sit amet consectetur adsicing elit. Laborum, magni.
+          Itaque, repella libero! Blanditiis corporis, modi aliquid eligendi
+          illo officiis, repudiandae nesciunt sunt temporibus similique
+          quibusdam. Odio, quo aut rerum architto deleniti itaque rendis ea
+          pariatur ipsa fugiat. Eveniet nostrum unde, saepe praesentium animi
+          quis quos aspernatur excepturi. Ipsum, laborum corporis blanditiis
+          rerum dolorum corrupti illum consectetur laudantium.
+        </span>
+        <div class="caja-edicion-borrar">
+            <div class="editar">
+                <button class="boton-editar">
+                    <a href="/products/edit/<%= product.id %>">Editar</a>
+                </button>
+            </div>
+            <br>
+            <div class="borrar">
+                <form class="form-boton-borar" action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" enctype="multipart/form-data" style="display:inline-flex">
+                    <button class="boton-borrar" type="submit">Borrar</button>
+                </form>                        
+            </div>
+        </div>
+    </section>
+        <%- include ('../partials/newsletter') %>
+        <%- include ('../partials/footer') %>
+
+</body>
+</html>

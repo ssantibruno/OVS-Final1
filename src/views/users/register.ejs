@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <%- include ('../partials/head') %>
+    </head>
+    <body>
+        <%- include ('../partials/header') %>
+    <main>
+        <section class="registerForm">
+        <form action="/users/register" method="POST" class="form-registro" enctype="multipart/form-data">
+            <div>
+                <h2>CREÁ TU CUENTA</h2>
+                <ul class="errores"></ul>
+            </div>
+            <div class="control-registro">
+                <input 
+                    type="text" 
+                    name="firstName" 
+                    id="firstName" 
+                    placeholder="Nombre"
+                    value="<%= locals.oldData ? oldData.firstName : null %>">
+                    <% if (locals.errors && errors.firstName) { %>
+                        <div class="text-danger">
+                            <%= errors.firstName.msg %> 
+                        </div>
+                    <% } %>
+            </div>
+            <div class="control-registro">
+                <input 
+                    type="text" 
+                    name="lastName" 
+                    id="lastName" 
+                    placeholder="Apellido"
+                    value="<%= locals.oldData ? oldData.lastName : null %>">
+                    <% if (locals.errors && errors.lastName) { %>
+                        <div class="text-danger">
+                            <%= errors.lastName.msg %> 
+                        </div>
+                    <% } %>
+            </div>
+            <div class="control-registro">
+                <input 
+                    type="email" 
+                    name="email" 
+                    id="email"
+                    placeholder="E-mail"
+                    value="<%= locals.oldData ? oldData.email : null %>">
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %> 
+                        </div>
+                    <% } %>
+            </div>
+            <div class="control-registro">
+                <input type="text" name="address" placeholder="Domicilio" id="address">
+            </div>
+            <div class="control-registro">
+                <input type="text" name="residencia" placeholder="Nacionalidad" id="nationality">
+            </div>
+            <div>
+                <label for="birth_date"><b>Fecha de nacimiento</b></label>
+                <input type="date" name="birth_date" id="birth_date">
+            </div>
+            <div class="control-registro">
+                <input type="text" name="intereses" placeholder="Club favorito">
+            </div>
+            <div class="control-registro">
+                <label for="img" class="form-label"> <b>Foto:</b></label>
+                <input type="file" accept="image/png, image/jpg, image/jpeg" name="image" id="image" class="product_imageFile">
+            </div>
+            <div class="contraseña">
+                <input 
+                    type="password" 
+                    name="password" 
+                    id="password"
+                    placeholder="Contraseña">
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %>
+                        </div>
+                    <% } %>
+            </div>
+            <div>
+                <h4>Quieres recibir ofertas a tu correo?</h4>
+            </div>   
+            <div class="notificaciones">
+                <input type="radio" name="notificaciones" value="Si" checked>
+                <label>Si</label>
+                <input type="radio"  name="notificaciones" value="No">
+                <label>No</label>
+            </div>
+            <div class="role">
+                <input type="radio"  name="role_id" value="1">
+                <label>Administrador</label>
+                <input type="radio" name="role_id" value="2" checked>
+                <label>Cliente</label>
+            </div>
+            <div class="terminos">
+                <p> <input id="terminos" type="checkbox" name="terminos" required> Estoy de acuerdo con <a href="#">Términos y Condiciones</a></p>
+            </div>
+            <div class="registrarse">
+                <button type="submit">Registrarse</button>
+            </div>    
+        </form>
+    </section>
+    </main>
+
+    <%- include ('../partials/footer') %>
+    <script src="/js/register.js"></script>
+
+</body>
+
+</html>

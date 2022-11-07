@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <%- include ('./partials/head') %>
+    </head>
+
+<body>
+    <%- include ('./partials/header') %>
+
+    <main>
+
+        <section id="hero">
+            <div class="bannercaja">
+                <h4>Encontrá la camiseta de tus sueños</h4>
+                <h2>Súper precios y descuentos</h2>
+                <h1>en TODOS los productos</h1>
+                <p>Ahorrá hasta un 25%!</p>
+                <button onclick="window.location.href='/products/list';">Comprá ahora</button>
+        </div>
+        </section>
+
+        <section id="feature" class="section-p1">
+            <div class="fe-box">
+                <img src="img/international.png" alt="feature" />
+                <h6><a href="products/Selecciones">Quiero!</a></h6>
+            </div>
+            <div class="fe-box">
+                <img src="img/spanish.png" alt="feature" />
+                <h6><a href="products/equiposEuropeos">Quiero!</a></h6>
+            </div>
+            <div class="fe-box">
+                <img src="img/english.png" alt="feature" />
+                <h6><a href="products/equiposEuropeos">Quiero!</a></h6>
+            </div>
+            <div class="fe-box">
+                <img src="img/french.png" alt="feature" />
+                <h6><a href="products/equiposEuropeos">Quiero!</a></h6>
+            </div>
+            <div class="fe-box">
+                <img src="img/restofworld.png" alt="feature" />
+                <h6><a href="products/restoDelMundo">Quiero!</a></h6>
+            </div>
+        </section>
+
+        <section id="product1" class="section-p1">
+            <h2>DESTACADOS</h2>
+            <p>Colección Productos Destacados</p>
+            <div class="pro-container">
+                <% allDestacados.forEach(function(product){ 
+                    let finalPrice = (product.price * ((100 - product.discount) / 100)).toFixed(0)
+                %>
+                <div class="pro" onclick="window.location.href='s-product.html';">
+                    <a href="/products/detail/<%=product.id%>">
+                        <img class="imagenarticulo" src="/img/products/<%= product.image %>"" alt="<%= product.name %>" >
+                    </a>
+                    <div class="des">
+                        <p class="nombre"><strong><%= product.product_name %></strong></p>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="precio">$ <%= product.price %>.00</p>
+                    </div>
+                    <a href="/products/detail/<%=product.id%>"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                </div>
+                <% }) %>
+            </div>
+        </section>
+
+        <section id="product1" class="section-p1">
+            <h2>OFERTAS</h2>
+            <p>Colección Productos en Oferta</p>
+            <div class="pro-container">
+                <% allOfertas.forEach(function(product){ 
+                    let finalPrice = (product.price * ((100 - product.discount) / 100)).toFixed(0)
+                %>
+                <div class="pro" onclick="window.location.href='s-product.html';">
+                    <a href="/products/detail/<%=product.id%>">
+                        <img class="imagenarticulo" src="/img/products/<%= product.image %>"" alt="<%= product.name %>" >
+                    </a>
+                    <div class="des">
+                        <p class="nombre"><strong><%= product.product_name %></strong></p>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="precio">$ <%= product.price %>.00</p>
+                    </div>
+                    <a href="/products/detail/<%=product.id%>"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                </div>
+                <% }) %>
+            </div>
+        </section>
+        
+    
+
+        <%- include ('./partials/newsletter') %>
+    </main>
+
+        <%- include ('./partials/footer') %>
+
+</body>
+
+</html>

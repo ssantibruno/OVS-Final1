@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <%- include ('../partials/head') %>
+    </head>
+
+    <body>
+        <%- include ('../partials/header') %>
+    
+        <main>
+            <div  class="productList">
+
+               <section >
+                <h3>Listado de productos</h3>
+                <% products.forEach (function (product){ %>
+
+                <section class="articulosList">
+                    <div class="articuloList">
+                        <div class="cajaImagenList">
+                            <a href="/products/detail/<%=product.id%>">
+                            <img class="imagenarticuloList" src="../img/products/<%= product.image %>" alt="<%= product.product_name %>" >
+                            </a>
+                        </div>
+                        <div class="cajaArticuloList">
+                            <h4 class="product_name"> <%= product.product_name %> </h4>
+                            <p class="descripcion"> Descripcion: <%= product.description %></p>
+                            <div class="caja2listproducts">
+                            <p class="precio">Precio: $<%= product.price %></p>
+                            <p class="talle"> Talle: <%= product.size %> </p>
+                            <p class="condition"> Condicion: <%= product.condition %> </p>
+                            </div>
+                            <div class="caja2listproducts">
+                            <p class="category"> Categoria: <%= product.categories.category_name %></p>
+                                                             <!-- producto. "alias" . columna -->
+                            <p class="type"> Tipo: <%= product.type %></p>
+                            <p class="seleccion-status"> Status: <%= product.status %></p>
+                            </div>
+                        </div> 
+                    </div>                
+                </section>
+                <% }) %>
+
+            </section>
+        </div>
+        </main>
+
+        <div class="registrarse">
+            <button>
+                <a href="./create" class="button" value='creacion'>Crear producto</a>
+            </button>
+        </div>
+    
+    </body>
+    
+    </html>

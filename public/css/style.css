@@ -1,0 +1,1045 @@
+@import "stylelistproducts.css";
+@import "stylelistusers.css";
+@import "styleproductDetail.css";
+@import "styleproductCreate.css";
+/***************GENERAL**********************/
+
+*{ 
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+body{
+    background-color:white;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 20px;
+    color: #222;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 50px;
+    color: #222;
+}
+
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+
+h5 {
+    font-size: 40px;
+    line-height: 50px;
+    color: #222;
+}
+h6 {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+button.normal {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 24px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all .24s;
+}
+
+/*----------------------- Header Start -----------------------*/
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px;
+    background-color: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 10px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#mobile {
+    display: none;
+    align-items: center;
+}
+
+#close {
+    display: none;
+}
+
+.logo {
+    height: 80px;
+    width: 160px;
+}
+
+.search{
+    display: flex;
+    background-image: linear-gradient((0,8,51,0.9),rgba(0,8,51,0.9));
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar{
+    width: 100%;
+    max-width: 700px;
+    background-color:#e3e6f3;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 100px, 20px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+
+.searchbarinput{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+    color: black;
+}
+
+::placeholder{
+    color: black;
+}
+
+.searchbar button img{
+    width: 25px;
+}
+
+.searchbar button{
+    border: 0;
+    border-radius: 15%;
+    width: 60px;
+    height: 60px;
+    background: #e3e6f3;
+    cursor: pointer;
+}
+
+
+
+.search .icon ::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border:3px solid black;
+    border-radius: 50%;
+}
+
+.search .icon ::after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: black;
+    border:3px solid black;
+    transform: translate(6px,6px) rotate(315deg);
+}
+
+/***************MAIN**********************/
+
+main h3{
+    text-align: center;
+    font-size: 18px;
+    }
+
+/***************BANNER**********************/
+
+#hero {
+    background-image: url(../img/bannerfinal.png);
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    }  
+
+.bannercaja{
+    padding: 5%;
+    background-color: white;
+    opacity: 0.85;
+    border-width: 1px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+
+.bannercaja p{
+    height: 10px;
+}
+
+#hero h4 {
+    padding-bottom: 15px;
+}
+
+#hero h1 {
+    color: #088178;
+}
+#hero p {
+    padding: 14px 0px 8px 44px;
+}
+
+#hero button {
+    background-image: url('/img/button.png');
+    background-color: transparent;
+    color: #088178;
+    border: 0;
+    padding: 14px 40px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/***************FEATURE PRODUCTOS**********************/
+#feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#feature .fe-box {
+    width: 220px;
+    text-align: center;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0;
+    margin: 15px 0;
+    transition: all .3s ease;
+}
+
+#feature .fe-box:hover {
+    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.25)
+}
+
+#feature .fe-box img {
+    width: 100%;
+    margin-bottom: 1px;
+}
+
+#feature .fe-box h6 {
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 2;
+    border-radius: 5px;
+    color: #088178;
+    background-color: #fddde4;
+}
+
+#feature .fe-box:nth-child(2) h6 {
+    background-color: #cdebbc;
+}
+
+#feature .fe-box:nth-child(3) h6 {
+    background-color: #d1e8f2;
+}
+
+#feature .fe-box:nth-child(4) h6 {
+    background-color: #cdd4f8;
+}
+
+#feature .fe-box:nth-child(5) h6 {
+    background-color: #f6dbf6;
+}
+
+#feature .fe-box:nth-child(6) h6 {
+    background-color: #fff2e5;
+}
+
+/***************PRODUCTOS**********************/
+
+#product1 {
+    text-align: center;
+}
+
+#product1 .pro-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#product1 .pro {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #379545;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+    margin: 15px 0;
+    transition: all .25s ease;
+    position: relative;
+}
+
+#product1 .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+#product1 .pro img {
+    height: 250px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+#product1 .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product1 .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#product1 .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#product1 .pro .des i {
+    font-size: 12px;
+    color: rgb(243, 181, 25);
+}
+
+#product1 .pro .des h4 {
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+#product1 .pro .cart {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+
+/***********NEWELETTER*************************/
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: #041e42;
+}
+
+#newsletter h4 {
+    font-size: 23px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#newsletter p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #818ea0;
+}
+
+#newsletter p span {
+    color: #ffbd27;
+}
+
+#newsletter .form {
+    display: flex;
+    width: 40%;
+}
+
+#newsletter input {
+    height: 3.125rem;
+    padding: 0 1.25em;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#newsletter button {
+    background-color: #088178;
+    color: #fff;
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+/*----------------------- Footer -----------------------*/
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo {
+    margin-bottom: 30px;
+}
+
+footer h4 {
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+
+footer a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+    transition: all .3s ease;
+}
+
+footer .follow {
+    margin-top: 20px;
+}
+
+footer .follow i {
+    color: #465b52;
+    padding-right: 5px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+footer .follow i:hover,
+footer a:hover {
+    color: #088178;
+}
+
+footer .install .row img {
+    border: 1px solid #088178;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+footer .install .row img:hover {
+    transform: scale(0.98);
+    border: 1px solid #099188;
+}
+
+footer .install img {
+    margin: 10px 0 15px 0;
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+/************FORM********************/
+
+.create-form {
+    padding: 20px 15px;
+    background-color:#e3e6f3;
+    margin:150px 50px 40px 50px;
+
+}
+
+.form-bienvenido {
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.items-form {
+    margin-bottom: 15px;
+}
+
+.items-form label {
+    margin-bottom: 5px;
+    font-style: italic;
+    display: block;
+    color: white;
+}
+
+.input {
+    width: 100%;
+    padding: 7px;
+
+}
+
+.button {
+    background-color: #000000;
+    color: #ebebeb;
+    border-radius: 5px;
+    padding: 2px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.recuperos {
+    display:flex;
+    justify-content: center;
+    padding: 0.1%;
+}
+
+.olvide-contraseña,.usuario-nuevo {
+    align-items: center;
+    padding: 7px;
+}
+
+.olvide-contraseña a,.usuario-nuevo a {
+    align-items: center;
+    color: rgb(21, 127, 194);
+}
+
+/*****************FORM-Registro***********************/
+
+.registerForm{
+    margin-top: 99px;
+}
+
+.form-registro {
+    width: 100%;
+    background-color: #e3e6f3;    
+}
+
+.form-registro{
+    text-align: center;
+}
+
+.form-registro div h2{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-style: italic;
+    font-size: 25px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.form-registro div{
+    margin-bottom: 10px;
+    padding: 2px;
+    display: block;
+}
+
+.control-registro input{
+    padding: 4px;
+    width: 80%;
+    max-width: 350px;
+    border-radius: 6px;
+    border: solid 1px rgb(58, 58, 160);
+}
+
+.contraseña input{
+    padding: 4px;
+    width: 70%;
+    max-width: 250px;
+    border-radius: 6px;
+    border: solid 1px rgb(58, 58, 160);
+}
+
+.control-registro{
+    width: 100%;
+}
+
+.terminos a, .registrado a{
+    text-decoration: none;
+}
+
+.terminos:hover a, .registrado:hover a{
+    text-decoration: underline;
+    color: black;
+}
+
+.registrarse button{
+    background: rgb(27, 26, 26);
+    color: white;
+    border: none;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.registrarse button a {
+    background: rgb(27, 26, 26);
+    color: white;
+    list-style: none;
+    text-decoration: none;
+}
+
+    .banner{
+        height: 500px;
+    }
+/************tablet articulos**********/
+    .articulos-nuevos, .articulos-destacados{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .articulo{
+        width: 47%;
+    }
+
+
+/***************tablet footer********************/
+.caja-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.Categorias, .Contactos, .redes, .formas-de-pago{
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.copyright{
+    font-size:12px ;
+}
+
+/***************************productCar*********************/
+
+.title-car{
+    margin-top: 100px;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+.cajaCompra{
+    display:flex;
+    padding:20px;
+}
+.productoCarrito{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    height: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.imgCarrito{
+    width:15%
+}
+.nombreCarrito{
+    width: 40%;
+}
+.cantidadCarrito{
+    width: 10%;
+}
+.unidadPrecioCarrito{
+    width: 15%;
+}
+.totalPrecioCarrito{
+    width: 15%;
+}
+.borrarCarrito{
+    width: 5%;
+}
+
+.totalesCarrito{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: #e3e6f3;
+}
+
+.subtotalCarrito, .totalCarrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    height: 40px;
+}
+
+.subtotalCarrito{
+    border-bottom: 1px solid #ebebeb;
+}
+
+.iniciarCompra, .continuarCompra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+
+
+
+/******************** tablet Header *********************/
+@media (min-width:371px){
+    .burger-menu{
+        display: none;
+    }
+
+    .register, .login{
+        display: inline;
+    }
+    .carrito p{
+        display: inline;
+    }
+    .nav-bar{
+        display: flex;
+        order:4;
+        width: 30%;
+    }
+    .nav-bar div a, .nav-bar div p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .register, .login, .carrito{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: rgb(202, 200, 80);
+        font-size: 20px;
+        text-align: center;
+        padding: 10px;
+        line-height: 20px;
+    }
+
+    .sub-menu-seleccion{
+        display: none;
+    }
+
+
+    .busqueda{
+        display: none;
+    }
+
+    .contenedor01{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 10px;
+    }
+    .logo{
+        order:1;
+        padding-top:1px;
+        display: flex;
+        justify-content: left;
+        size: 5cm;
+    }
+
+    .busqueda2{
+        display: inline;
+        order:3;
+        width:35%;    
+        position: relative;
+    }
+
+    .busqueda2 input{
+        width: 100%;
+        border: none;
+        height: 50px;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 20px;
+    }
+    .busqueda2 .button-lupa button{
+        position: absolute;
+        top:10px;
+        right:10px;
+        font-size: 30px;
+        background-color: black;
+        color:black;
+        border: none;
+        }
+
+/*********************portatil ********************/
+
+@media (min-width:769px){
+    .titulo{
+        display: inline;
+        font-size: 26px;
+    }
+    .busqueda2{
+        display: inline;
+        order:3;
+        width:35%;    
+        position: relative;
+    }
+
+    .busqueda2 input{
+        width: 100%;
+        border: none;
+        height: 50px;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 20px;
+    }
+    .busqueda2 .button-lupa button{
+        position: absolute;
+        top:10px;
+        right:10px;
+        font-size: 30px;
+        background-color: white;
+        color:black;
+        border: none;
+        }
+
+    .register, .login, .carrito{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: rgb(202, 200, 80);
+        font-size: 16px;
+        text-align: center;
+        padding: 10px;
+        line-height: 30px;
+    }
+    .nav-bar div a i{
+        font-size: 50px;
+    }
+
+    .nav-bar-tipos ul li a{
+        font-size: 22px;
+    }
+    .banner{
+        height: 500px;
+    }
+/****************portatil  articulo****/
+.articulos-nuevos, .articulos-destacados{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+}
+.articulo{
+    width: 23%;
+}
+}
+
+/********newsletter*******/
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color:#041e42;
+}
+
+#newsletter h4 {
+    font-size: 23px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#newsletter p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #818ea0;
+}
+
+#newsletter p span {
+    color: #ffbd27;
+}
+
+#newsletter .form {
+    display: flex;
+    width: 40%;
+}
+
+#newsletter input {
+    height: 3.125rem;
+    padding: 0 1.25em;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#newsletter button {
+    background-color: #088178;
+    color: #fff;
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/*****Validaciones Front-end*******/
+
+.is-valid{
+    background-color: rgb(112, 187, 128);
+}
+
+.is-invalid{
+    background-color: rgb(185, 146, 146);
+}
+
+.alert-warning{
+    color: red;
+    background-color: rgb(193, 190, 190);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+}
+}
+
+
+/*--------------------- About Page ---------------------*/
+
+#page-header.about-header {
+    background-image: url("../img/banner.png");
+}
+
+#about-head {
+    display: flex;
+    align-items: center;
+}
+
+#about-head img {
+    width: 50%;
+    height: auto;
+}
+
+#about-head div {
+    padding-left: 40px;
+}
+
+#about-app {
+    text-align: center;
+}
+
+
+/*----------------------- Shop Page ----------------------- */
+
+#page-header {
+    background-image: url("img/b1.jpg");
+    width: 100%;
+    height: 40vh;
+    padding: 14px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+#page-header h2,
+#page-header p {
+    color: #fff;
+}
+
+#pagination {
+    text-align: center;
+}
+
+#pagination a {
+    text-decoration: none;
+    background-color: #088178;
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+}
+
+#pagination a i {
+    font-size: 16px;
+    font-weight: 600;
+}
